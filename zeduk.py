@@ -11,13 +11,12 @@ random4ik = ['1', '2', "3", "4", "5", "6", "7", "8", "9", "10"]
 ugadayka = ['1', '2']
 citats = ['', '', '']
 mat = [""]
-erunda = ["лосось", "михайлов", "пятый", "2008", "ромбик", "стас", "бомбастер", "пажылой", "читос", "липтон"]
 
 
 @zeduk.event
 async def on_ready():
     print('Вы залогинины как: {0}!'.format(zeduk.user))
-    await zeduk.change_presence(activity=discord.Streaming(name="Префикс z!", url="https://yandex.ru/?clid=22411725&0x419="))
+    await zeduk.change_presence(activity=discord.Streaming(name="Префикс z!", url="your twitch ;)"))
 
     @zeduk.event
     async def on_message(message):
@@ -50,23 +49,10 @@ async def on_ready():
             await message.channel.send(f":8ball:Вам выпало число:{random.choice(random4ik)}")
         if message.content.startswith("z!Рандом"):
             await message.channel.send(f":8ball:Вам выпало число:{random.choice(random4ik)}")
-# инфо
-        if message.content.startswith("z!инфо"):
-            await message.channel.send("https://sun9-11.userapi.com/5vq4ln1gHhqBxU8QYlkZAtxXzCLGuFG8qFYV5w/jmo1gEnTR9Y.jpg")
-            await asyncio.sleep(2)
-            await message.channel.send("**РАЗРАБОТЧИКИ БОТА: @sherifoboltus и @Hell_Strawberry**")
-            await asyncio.sleep(2)
-            await message.channel.send("**БОТ ЗАРЕГЕСТРИРОВАН: 8 июня 2020**")
-            await asyncio.sleep(2)
-            await message.channel.send("**БОТ СОЗДАН: 1 сентября 2020**")
 # аноним-чат
         if message.content.startswith("."):
             await message.delete()
             await message.channel.send(f"**Кто-то сказал: {message.content}**")
-# ерунда и бред
-        if message.content.startswith("z!ерунда"):
-            await message.channel.send(f"{random.choice(erunda)} {random.choice(erunda)}")
-
 @zeduk.event
 async def on_guild_join(guild):
     category = guild.categories[0]
@@ -79,4 +65,4 @@ async def on_member_join(member):
     await member.send(f'Привет {member}! **{random.choice(privet)}**')
 
 
-zeduk.run('NzE5NjQ0MDA4MTQ1NDg1OTE1.Xt6atQ.KFWBR2oUibYVrys7VF7Ip5CaRsc')
+zeduk.run('your token')
