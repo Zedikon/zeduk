@@ -5,7 +5,7 @@ import asyncio
 
 zeduk = discord.Client()
 
-# переменные
+# module
 time_string = time.strftime("Время: %H:%M:%S")
 random4ik = ['1', '2', "3", "4", "5", "6", "7", "8", "9", "10"]
 ugadayka = ['1', '2']
@@ -27,24 +27,22 @@ async def on_ready():
             await message.channel.send(f':alarm_clock:Пинг: {0}'.format(zeduk.latency),)
         if message.content.startswith("z!Пинг"):
             await message.channel.send(':alarm_clock:Пинг: {0}'.format(zeduk.latency))
-# аватарка
+# avatar
         if message.content.startswith("z!ава"):
             await message.channel.send(f":camera_with_flash:Ваша аватарка:")
             await message.channel.send(message.author.avatar_url)
         if message.content.startswith("z!Ава"):
             await message.channel.send(f":camera_with_flash:Ваша аватарка:")
             await message.channel.send(message.author.avatar_url)
-# время
+# time
         if message.content.startswith("z!время"):
             await message.channel.send(f"{time_string}")
         if message.content.startswith("z!Время"):
             await message.channel.send(f"{time_string} ")
-# сервера
+# guild
         if message.content.startswith("z!сервера"):
             await message.channel.send(f"Количество серверов: {len(zeduk.guilds)}")
-# тест
-        if message.content.startswith("z!тест"):
-# рандомное число
+# random
         if message.content.startswith("z!рандом"):
             await message.channel.send(f":8ball:Вам выпало число:{random.choice(random4ik)}")
         if message.content.startswith("z!Рандом"):
@@ -53,12 +51,14 @@ async def on_ready():
         if message.content.startswith("."):
             await message.delete()
             await message.channel.send(f"**Кто-то сказал: {message.content}**")
+#hello
 @zeduk.event
 async def on_guild_join(guild):
     category = guild.categories[0]
     channel = category.channels[0]
     await channel.send("**привет я новый на этом сервере! мой префикс 'z!' что бы увидеть мой фунционал пропиши z!команды**")
 
+# newmember
 @zeduk.event
 async def on_member_join(member):
     privet = ["приветсвую тебя на нашем сервере!", "добро пожаловать на наш сервер!"]
