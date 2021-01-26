@@ -7,8 +7,6 @@ zeduk = discord.Client()
 
 # module
 time_string = time.strftime("Время: %H:%M:%S")
-random4ik = ['1', '2', "3", "4", "5", "6", "7", "8", "9", "10"]
-ugadayka = ['1', '2']
 citats = ['', '', '']
 mat = [""]
 
