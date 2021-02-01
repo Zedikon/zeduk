@@ -15,7 +15,7 @@ randoms = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
 
 @zeduk.event
 async def on_ready():
-    print('Вы залогинины как: {0}!'.format(zeduk.user))
+    print('You login as: {0}!'.format(zeduk.user))
     await zeduk.change_presence(activity=discord.Streaming(name="Префикс z!", url="your twitch ;)"))
 
     @zeduk.event
