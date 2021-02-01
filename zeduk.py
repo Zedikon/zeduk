@@ -45,10 +45,9 @@ async def on_ready():
             await message.channel.send(f":8ball:Вам выпало число:{random.choice(random4ik)}")
         if message.content.startswith("z!Рандом"):
             await message.channel.send(f":8ball:Вам выпало число:{random.choice(random4ik)}")
-# аноним-чат
-        if message.content.startswith("."):
+# delete message
+        if message.content.startswith("z!delete"):
             await message.delete()
-            await message.channel.send(f"**Кто-то сказал: {message.content}**")
 #hello
 @zeduk.event
 async def on_guild_join(guild):
